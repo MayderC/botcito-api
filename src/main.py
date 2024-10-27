@@ -49,7 +49,7 @@ async def verify_api_key(request: Request, call_next):
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[os.getenv("ALLOW_ORIGIN")],
     allow_methods=["POST", "GET", "DELETE"],
 )
 
